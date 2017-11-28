@@ -19,7 +19,7 @@ SimulatedData <- function(coeffs) {
   return(list(eps_t = eps, sig_t = sigsq))
 }
 
-coeffs <- c(1, 0.1, 0.8)
+coeffs <- c(0.2, 0.5, 0.3)
 
 GARCHdata <- SimulatedData(coeffs)
 
@@ -67,6 +67,6 @@ GarchLogLikelihood <- function(coeffs) {
 GarchLogLikelihood(coeffs)
 
 ## Non-Linear Minimization
-mle <- nlm(GarchLogLikelihood, c(0.5,0.1,0.5)) # start at 0.1 0.1 0.1
+mle <- nlm(GarchLogLikelihood, c(0.1,0.1,0.1)) # start at 0.1 0.1 0.1
 
 mle 
